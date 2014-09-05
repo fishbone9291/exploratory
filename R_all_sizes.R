@@ -5,6 +5,7 @@ setwd("C:/Users/brian/Desktop/Masters Thesis/Data Files/")
 library("dplyr")
 library("ggplot2")
 library("date")
+library("reshape2")
 
 # Import data files, print and summarize
 all_sizes <- read.csv("all_sizes.csv", header=TRUE, sep=",")

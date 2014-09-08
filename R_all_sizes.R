@@ -40,9 +40,7 @@ yrl <- all_sizes[all_sizes$age.class == 1,]
 adult <- all_sizes[all_sizes$age.class == 2,]
 
 # Can also create a function and call it to separate data, same as above
-age.split <- function(class){
-  all_sizes[all_sizes$age.class == class,]
-}
+age.split <- function(class){all_sizes[all_sizes$age.class == class,]}
 
 yoy <- age.split(0)
 yrl <- age.split(1)
@@ -74,6 +72,6 @@ plot(logweight~loglength,data=yoy,main="YOY loglog")
 plot(logweight~loglength,data=yrl,main="Yrl loglog")
 plot(logweight~loglength,data=adult,main="Adt loglog")
 
-# Or, make multiple summarizing plots simultaneously using ggplot
+# Or, make multiple summarizing plots simultaneously using ggplot2
 # Holy crap!
 ggplot(all_sizes) + geom_histogram(aes(x=length), binwidth = 10) + facet_wrap(~age.class + site)
